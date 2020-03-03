@@ -135,5 +135,7 @@ Guardamos los cambios y así quedaría configurado nuestro WordPress.
 
 Para verificar que esté funcionando correctamente, accedemos al sitio usando la IP del servidor o el dominio obtenido.
 http://ip_o_dominio/wp-admin
-Si nos encontramos con la siguiente pantalla, la instalación fue un éxito.
+
+Si nos encontramos con la pantalla de configuración inicial, la instalación fue un éxito.
+
 
