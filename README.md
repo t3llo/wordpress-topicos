@@ -28,10 +28,12 @@ Iniciamos el servicio de apache y lo configuramos para que se inicie cuando el s
    ###  M - MySQL/MariaDB
 Para manejar la base de datos de nuestro sitio web, se usará MySQL y MariaDB.
 
-Instalamos MariaDB
+Instalamos MariaDB y realizamos la configuración de seguridad inicial
 
     $ yum -y install mariadb-server
     $ systemctl start mariadb
+    $ mysql_secure_installation
+
 
 Habilitamos el servicio de MariaDB 
 
@@ -58,3 +60,18 @@ Instalamos el paquete de PHP
 Finalmente, reiniciamos el servicio de Apache para que funcione con PHP
 
     $ systemctl restart httpd
+## Instalación y configuración de WordPress
+### Configuración de la base de datos
+Realizamos el login a mysql
+ 
+    mysql -u root -p
+Procedemos a crear la base de datos de nuestro WordPress y un usuario para ésta, además de proporcionarle permisos para el acceso. Cambiamos los campos de username y contraseña con la información necesaria.
+
+    CREATE DATABASE wordpress-db;
+    CREATE USER  <username>@localhost IDENTIFIED BY '<contraseña>';
+    GRANT ALL PRIVILEGES ON wordpress-db.* TO <username>@localhost IDENTIFIED BY '<contraseña>';
+Ejecutamos el siguiente comando para que MySQL acepte los cambios, y salimos de MySQL
+
+    FLUSH PRIVILEGES;
+    exit
+### Instalación de WordPress
