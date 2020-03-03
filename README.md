@@ -15,7 +15,8 @@ Vamos a usar Apache como software para el webserver, para instalarlo ejecutamos 
 
     $ yum -y install httpd
 Debemos abrir los puertos en el Firewall  
-    $ firewall-cmd --permanent --add-service=http -add-service=https 
+  
+    $ firewall-cmd --permanent --add-service=http -add-service=https
     $ firewall-cmd --reload
 
 
